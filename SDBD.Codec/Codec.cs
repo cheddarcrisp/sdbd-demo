@@ -2,10 +2,15 @@
 
 public class Codec : ICodec {
   public Document Decode(byte[] data) {
-    return new(new (), new byte[0]);
+    return new(
+      new () {
+        { "content-name", "text.txt" }
+      },
+      data
+    );
   }
 
   public byte[] Encode(Document document) {
-    return new byte[0];
+    return document.Data;
   }
 }
