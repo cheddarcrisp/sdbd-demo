@@ -11,7 +11,7 @@ if(encode) {
     inputData
   );
   var outputData = codec.Encode(document);
-  File.WriteAllBytes($"{filename}.sbdb", outputData);
+  File.WriteAllBytes($"{filename}.sdbd", outputData);
 } else {
   var document = codec.Decode(inputData);
   File.WriteAllBytes(document.Metadata["content-name"], document.Data);
